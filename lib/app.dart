@@ -1,4 +1,4 @@
-import 'package:app_calculadora_imc/pages/calculatorPage.dart';
+import 'package:app_calculadora_imc/pages/CalculatorPage.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatelessWidget {
@@ -10,7 +10,6 @@ class App extends StatelessWidget {
       home: const CalculatorPage(),      
       theme: ThemeData(primarySwatch: Colors.cyan),
       debugShowCheckedModeBanner: false,
-
     );
   }
 }

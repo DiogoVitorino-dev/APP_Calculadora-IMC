@@ -25,14 +25,10 @@ class _DialogIMCState extends State<DialogIMC> {
   TextEditingController pesoController = TextEditingController();
 
   @override
-  void initState() {
-    if (widget.initNome != null &&
-        widget.initPeso != null &&
-        widget.initAltura != null) {
-      nomeController.text = widget.initNome!;
-      pesoController.text = widget.initPeso.toString();
-      alturaController.text = widget.initAltura.toString();
-    }
+  void initState() {  
+    nomeController.text = widget.initNome ?? "";
+    pesoController.text = widget.initPeso != null ? widget.initPeso.toString() : "";
+    alturaController.text = widget.initAltura != null ? widget.initAltura.toString() : "";    
 
     super.initState();
   }
@@ -111,7 +107,7 @@ class _DialogIMCState extends State<DialogIMC> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
               ),
               TextField(
-                autofocus: true,
+                autofocus: nomeController.text.isEmpty ? true : false,
                 controller: nomeController,
               ),
               const SizedBox(
@@ -132,6 +128,7 @@ class _DialogIMCState extends State<DialogIMC> {
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
               ),
               TextField(
+                autofocus: nomeController.text.isNotEmpty ? true : false,
                 controller: pesoController,
               ),
             ],

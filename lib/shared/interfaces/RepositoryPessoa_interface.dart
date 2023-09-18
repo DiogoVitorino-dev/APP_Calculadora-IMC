@@ -1,9 +1,9 @@
-import 'package:app_calculadora_imc/models/Pessoa.dart';
+import 'package:app_calculadora_imc/database/models/pessoaModelDB.dart';
 
 abstract class IRepositoryPessoa {
-  void add(Pessoa pessoa);
-  void remover(String id);
-  List<Pessoa> get();
-  void alterar(Pessoa pessoa);
-  int length();
+  Future<void> add(PessoaModelDB pessoa);
+  Future<void> delete(int id);
+  Future<List<PessoaModelDB>> getAll();
+  Future<void> update(PessoaModelDB pessoa);
+  Future<int> length();
 }

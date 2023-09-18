@@ -1,11 +1,11 @@
+import 'package:app_calculadora_imc/database/models/pessoaModelDB.dart';
 import 'package:app_calculadora_imc/models/Imc.dart';
-import 'package:app_calculadora_imc/models/Pessoa.dart';
 import 'package:flutter/material.dart';
 
 class ItemList extends StatelessWidget {
-  final Pessoa item;
-  final Function(Pessoa item) onPress;
-  final Function(Pessoa item) onPressDelete;
+  final PessoaModelDB item;
+  final Function(PessoaModelDB item) onPress;
+  final Function(PessoaModelDB item) onPressDelete;
 
   String getClassifier() => Imc.classifier(altura: item.altura,peso: item.peso);
   

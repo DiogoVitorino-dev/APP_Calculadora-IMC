@@ -8,7 +8,6 @@ class Imc {
     if (imc == null) {
       if (altura != null && peso != null) {
         imc = calculateOnly(altura, peso);
-        //print(calculateOnly(altura, peso));
       } else {
         return "";
       }
